@@ -3,7 +3,7 @@
 $con = mysqli_init();
 
 // Configurar SSL
-mysqli_ssl_set($con, NULL, NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+mysqli_ssl_set($con, NULL, NULL, "./DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
 // Conectar a MySQL en Azure
 $servidor = "vindascraft.mysql.database.azure.com";
