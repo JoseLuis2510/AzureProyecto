@@ -1,41 +1,6 @@
 <?php
-// Iniciar conexión
 $con = mysqli_init();
-
-// Verificar si la inicialización de la conexión MySQL fue exitosa
-if (!$con) {
-    die("❌ Error al inicializar la conexión MySQL.");
-} else {
-    echo "✅ Conexión MySQL inicializada.<br>";
-}
-
-// Verificar si el archivo de certificado existe
-$certificado = "./DigiCertGlobalRootG2.crt.pem";
-if (!file_exists($certificado)) {
-    die("❌ Error: No se encontró el archivo de certificado SSL.");
-} else {
-    echo "✅ Certificado SSL encontrado.<br>";
-}
-
-// Configurar SSL
-mysqli_ssl_set($con, NULL, NULL, $certificado, NULL, NULL);
-
-// Datos de conexión
-$servidor = "vindascraft.mysql.database.azure.com";
-$usuario = "muebleriavindas";
-$contraseña = "Proyecto2025*.";
-$base_datos = "muebleria";
-
-// Intentar la conexión a la base de datos
-echo "Antes de intentar conectar...<br>";  // Este mensaje debe aparecer antes de intentar la conexión
-
-if (!mysqli_real_connect($con, $servidor, $usuario, $contraseña, $base_datos, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    echo "❌ Error de conexión: " . mysqli_connect_error();
-} else {
-    echo "✅ Conexión exitosa a MySQL en Azure";
-}
-
-// Cerrar conexión
-mysqli_close($con);
+mysqli_ssl_set($con,NULL,NULL, "./DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+mysqli_real_connect($conn, "vindascraft.mysql.database.azure.com", "muebleriavindas", "Proyecto2025*.", "muebleria", 3306, MYSQLI_CLIENT_SSL);
 ?>
 
