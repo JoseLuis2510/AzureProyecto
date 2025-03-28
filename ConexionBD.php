@@ -21,10 +21,11 @@ $base_datos = "muebleria";
 
 // Intentar conexión con SSL
 if (!mysqli_real_connect($con, $servidor, $usuario, $contraseña, $base_datos, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    die("❌ Error de conexión: " . mysqli_connect_error());
+    echo "❌ Error de conexión: " . mysqli_connect_error(); // Mostrar mensaje de error
+} else {
+    echo "✅ Conexión exitosa a MySQL en Azure"; // Confirmar éxito
 }
 
-echo "✅ Conexión exitosa a MySQL en Azure";
 
 // Cerrar conexión
 mysqli_close($con);
