@@ -19,11 +19,12 @@ $usuario = "muebleriavindas";
 $contraseña = "Proyecto2025*.";
 $base_datos = "muebleria";
 
-// Intentar conexión con SSL
+echo "Antes de intentar conectar...<br>";  // Este mensaje debe aparecer antes de intentar la conexión
+
 if (!mysqli_real_connect($con, $servidor, $usuario, $contraseña, $base_datos, 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    echo "❌ Error de conexión: " . mysqli_connect_error(); // Mostrar mensaje de error
+    echo "❌ Error de conexión: " . mysqli_connect_error();
 } else {
-    echo "✅ Conexión exitosa a MySQL en Azure"; // Confirmar éxito
+    echo "✅ Conexión exitosa a MySQL en Azure";
 }
 
 
