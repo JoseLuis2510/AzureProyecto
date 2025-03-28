@@ -1,20 +1,23 @@
 <?php
+// Datos de la base de datos
+$servidor = "vindascraft.mysql.database.azure.com";  // Asegúrate que este es el servidor correcto
+$usuario = "muebleriavindas";  // Usuario con privilegios para acceder a la base de datos
+$contraseña = "Proyecto2025*.";  // La contraseña correcta
+$base_datos = "muebleria";  // El nombre de la base de datos que estás utilizando
+
+// Crear la conexión
 $conn = mysqli_init();
 
-// Asegúrate de que el nombre de usuario y la contraseña estén correctamente configurados
-$usuario = "muebleriavindas";  // Tu nombre de usuario
-$contraseña = "Proyecto2025*."; // Tu contraseña
-
-// Verifica si se está configurando correctamente el SSL
+// Configurar SSL
 mysqli_ssl_set($conn, NULL, NULL, "./DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
-// Intentar la conexión a la base de datos
-if (!mysqli_real_connect($conn, "vindascraft.mysql.database.azure.com", $usuario, $contraseña, "muebleria", 3306, NULL, MYSQLI_CLIENT_SSL)) {
-    die('❌ Error de conexión a MySQL: ' . mysqli_connect_error());
+// Intentar la conexión
+if (!mysqli_real_connect($conn, $servidor, $usuario, $contraseña, $base_datos, 3306, NULL, MYSQLI_CLIENT_SSL)) {
+    echo('❌ Error al conectar a MySQL: ' . mysqli_connect_error());
 } else {
     echo "✅ Conexión exitosa a MySQL en Azure";
 }
 
-// Cerrar la conexión
+// Cerrar la conexión al final
 mysqli_close($conn);
 ?>
