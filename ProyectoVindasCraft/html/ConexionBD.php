@@ -1,7 +1,7 @@
 <?php
 $host = 'vindascraft.mysql.database.azure.com';
 $user = 'muebleriavindas';
-$pass = 'Proyecto2025*.'; //Cada uno debe cambiar esto para que la conexion funcione ya que todos tenemos contraseñas distintas
+$pass = 'Proyecto2025*.'; 
 $db = 'muebleria';
 
 
