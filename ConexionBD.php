@@ -1,6 +1,6 @@
 <?php
 $host = 'vindascraft.mysql.database.azure.com';
-echo $username = 'muebleriavindas';
+$username = 'muebleriavindas';
 $password = 'Proyecto2025*.';
 $db_name = 'muebleria';
 
