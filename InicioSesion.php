@@ -37,7 +37,7 @@ if (isset($_SESSION['mensaje'])) {
                   <img src="../assets/images/logo.jpg" width="200px"  alt="">
                 </a>
                 <p class="text-center">Vindas Mueblería</p>
-                <form action="InicioSesion_Procesar.php" method="POST" id="formulario">
+                <form action="./InicioSesion_Procesar.php" method="POST" id="formulario">
                 <div class="mb-3">
                     <label for="identificacion" class="form-label">Identificación</label>
                     <input type="text" class="form-control" id="identificacion" name="identificacion" >
