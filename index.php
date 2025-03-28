@@ -1,10 +1,10 @@
 <?php
-
-session_start();
-if (!isset($_SESSION['id_usuario'])) {
-    header("Location: InicioSesion.php");
-    exit();
-}
+//
+//session_start();
+//if (!isset($_SESSION['id_usuario'])) {
+   // header("Location: InicioSesion.php");
+  //  exit();
+//}
 
 // Inicia la captura del contenido
 ob_start();
